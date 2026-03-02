@@ -1,6 +1,5 @@
-import type { ChangeEvent, DragEvent, KeyboardEvent } from 'react';
+import type { ChangeEvent, DragEvent, KeyboardEvent, RefObject } from 'react';
 import {
-  forwardRef,
   useCallback,
   useEffect,
   useId,
@@ -28,15 +27,18 @@ type VisualizerSectionProps = {
   onDragOver: (e: DragEvent) => void;
   onDragLeave: (e: DragEvent) => void;
   onFileChange: (file: File | null) => void;
+  ref?: RefObject<VisualizerHandle | null>;
 };
 
-export const VisualizerSection = forwardRef<
-  VisualizerHandle,
-  VisualizerSectionProps
->(function VisualizerSection(
-  { file, dragOver, onDrop, onDragOver, onDragLeave, onFileChange },
+export const VisualizerSection = function VisualizerSection({
+  file,
+  dragOver,
+  onDrop,
+  onDragOver,
+  onDragLeave,
+  onFileChange,
   ref,
-) {
+}: VisualizerSectionProps) {
   const waveformRef = useRef<HTMLDivElement>(null);
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const fileUrlRef = useRef<string | null>(null);
@@ -489,4 +491,4 @@ export const VisualizerSection = forwardRef<
       )}
     </>
   );
-});
+};

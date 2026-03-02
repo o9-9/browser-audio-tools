@@ -162,7 +162,7 @@ export default function App() {
     Record<Operation, OperationResult>
   >(createEmptyResultsMap);
   const currentOperationRef = useRef<Operation>('convert');
-  const visualizerRef = useRef<VisualizerHandle>(null);
+  const visualizerRef = useRef<VisualizerHandle | null>(null);
   const [batchPreviews, setBatchPreviews] = useState<
     { name: string; url: string; type: 'audio' | 'image' }[] | null
   >(null);
