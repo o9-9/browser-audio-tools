@@ -281,8 +281,7 @@ export function TrimSection({
   };
 
   const selectAll = () => {
-    updateOption('startTime', 0);
-    updateOption('endTime', duration);
+    onOptionsChange({ ...options, startTime: 0, endTime: duration });
     setStartTimeInput(formatTime(0));
     setEndTimeInput(formatTime(duration));
     updateRegion(0, duration);
