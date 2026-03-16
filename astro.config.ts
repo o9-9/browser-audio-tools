@@ -1,4 +1,5 @@
 import type { ServerResponse } from 'node:http';
+import { resolve } from 'node:path';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
 import { defineConfig } from 'astro/config';
@@ -39,6 +40,13 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [coiHeadersPlugin()],
+    resolve: {
+      alias: {
+        'wavesurfer.js/dist/plugins/regions.js': resolve(
+          'node_modules/wavesurfer.js/dist/plugins/regions.js',
+        ),
+      },
+    },
     optimizeDeps: {
       exclude: ['@ffmpeg/ffmpeg', '@ffmpeg/util'],
     },

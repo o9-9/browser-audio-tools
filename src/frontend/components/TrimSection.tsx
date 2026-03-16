@@ -1,7 +1,7 @@
 import type { ChangeEvent, DragEvent, KeyboardEvent } from 'react';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import WaveSurfer from 'wavesurfer.js';
-import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions.esm.js';
+import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions.js';
 import type { OutputFormat, TrimOutputFormat } from '../api';
 import { formatSupportsCoverArt } from '../api';
 import { BITRATE_OPTIONS } from '../types';

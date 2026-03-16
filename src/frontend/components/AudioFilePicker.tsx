@@ -109,8 +109,11 @@ export function AudioFilePicker({
       </button>
       {files.length > 1 && (
         <ul className="file-list">
-          {files.map((f, i) => (
-            <li key={`${f.name}-${i}`} className="file-list-item">
+          {files.map((f) => (
+            <li
+              key={`${f.name}-${f.size}-${f.lastModified}`}
+              className="file-list-item"
+            >
               <span className="file-list-name">{f.name}</span>
               <span className="file-list-size">{formatSize(f.size)}</span>
             </li>

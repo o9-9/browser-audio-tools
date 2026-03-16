@@ -25,13 +25,13 @@ import { zipSync } from 'fflate';
 
 export type NoiseType = 'white' | 'pink';
 export type {
-  ID3Metadata,
+  Channels,
   ConvertOptions,
   GenericConvertOptions,
+  ID3Metadata,
   OutputFormat,
-  SampleRate,
-  Channels,
   ProgressCallback,
+  SampleRate,
   TrimOptions,
   TrimOutputFormat,
 };
